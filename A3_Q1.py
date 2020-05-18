@@ -16,14 +16,14 @@ k=np.linspace(ak,bk,nk)
 print(k)
 
 def f(x): #defining the function
-    return np.sin(x)/x
+    if x==0:
+        return 1
+    else:
+        return np.sin(x)/x
 
 y=np.zeros(nx)  #Actual function array
 for i in range(nx):
-    if x[i]==0:
-        y[i]=1
-    else:
-        y[i]=f(x[i])
+    y[i]=f(x[i])
 print(y)
 
 ft=np.zeros(nk) #fourier transform array
